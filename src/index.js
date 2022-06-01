@@ -31,7 +31,20 @@ client.on('chat', (target, ctx, message, self) => {
             client.action(process.env.CHANNEL_NAME, `Pong!`);
         } else if(command === 'help') {
             client.action(process.env.CHANNEL_NAME, `Commands: ping, help`);
-        } else {
+        } else if (command === 'amor') {
+            if(!args[0]) return client.action(process.env.CHANNEL_NAME, `Debes especificar un usuario`);
+            function amor () {
+                const sides = 100;
+                return Math.floor(Math.random() * sides) + 1;
+            }
+            client.action(process.env.CHANNEL_NAME, `Existe un ${amor()}% de amor entre ${ctx.username} y ${args}`);
+        } else if (command === 'facha') {
+            function facha () {
+                const sides = 100;
+                return Math.floor(Math.random() * sides) + 1;
+            }
+            client.action(process.env.CHANNEL_NAME, `${ctx.username} tiene un ${facha()}% de facha GlitchCat`);
+        } else  {
             client.action(process.env.CHANNEL_NAME, `Command not found`);
         }
     }
@@ -40,6 +53,6 @@ client.on('chat', (target, ctx, message, self) => {
 client.on('chat', (target, ctx, message, self) => {
     if(self) return;
     if(message === 'hola') {
-        client.say(target, `Welcome ${ctx.username}`);
+        client.say(target, `Welcome ${ctx.username} <3`);
     }
 })
