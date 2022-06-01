@@ -1,0 +1,19 @@
+{
+  "name": "twitch_bot",
+  "version": "1.0.0",
+  "description": "Bot Twitch With Api Twitch",
+  "main": "index.js",
+  "scripts": {
+    "start" : "nodemon src/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.0.1",
+    "tmi.js": "^1.8.5"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.16"
+  }
+}
